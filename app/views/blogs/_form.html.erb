@@ -2,7 +2,8 @@
   <%= f.label :title %>
   <%= f.text_field :title %>
   <br/>
-  <%= f.hidden_field :author, default: "#{current_user.first_name} #{current_user.last_name}" %>
+  <%= f.hidden_field :author, value: "#{current_user.first_name} #{current_user.last_name}" %>
+  <%= f.hidden_field :user_id %>
   </br>
   <%= f.label :body %>
   <%= f.text_area :body %>

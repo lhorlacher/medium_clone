@@ -2,7 +2,7 @@
 
 <% if @blogs %>
   <ul>
-    <% @blogs.each do |blogs| %>
+    <% @blogs.each do |blog| %>
       <li>
         <%= link_to "#{@blog.title}", blogs_path%>
       </li>
