@@ -1,10 +1,8 @@
-<div class="login-center">
-<h1>Landing Page</h1>
-<hr>
-<p>PAGE USERS SEE FIRST AND HAVE A LINK TO CLICK ON TO GO TO A LOGIN PAGE.
-</p>
-<br><br>
-<%= link_to 'LOGIN', new_user_session_path %>
-<br><br>
-<%= link_to 'COMMENTS', new_user_registration_path %>
-</div>
+<% @blogs.each do |blog| %>
+	<div class="card-panel hoverable col 12">
+		<h5> <%= link_to blog.author, blogger_posts(blog.blogger_id) %> </h5>
+		<br>
+		<h3> <%= blog.title %> </h3>
+		<p class='truncate'> <%= blog.body %> </p>
+	</div>
+<% end %>
