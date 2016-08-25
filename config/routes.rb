@@ -13,19 +13,19 @@ Rails.application.routes.draw do
 
   # blogger
   #show
-  get 'bloggers/:id', to: 'bloggers/show', as: 'blogger_posts'
+  get 'bloggers/:id', to: 'bloggers#show', as: 'blogger_posts'
 
   # blogs
   #show 
-  get 'blogs/:id', to: 'blogs/show', as: 'blog'
+  get 'blogs/:id', to: 'blogs#show', as: 'show_blog'
   #new 
   get 'bloggers/:blogger_id/blogs/new', to: 'blogs#new', as: 'new_blog'
   #create 
-  post 'bloggers/:blogger_id/blogs/new', to: 'blogs#create', as: 'blog'
+  post 'bloggers/:blogger_id/blogs/new', to: 'blogs#create'
   #edit 
-  get 'blogs/:id', to: 'blogs#edit', as: :edit_blog
+  get 'blogs/:id', to: 'blogs#edit', as: 'edit_blog'
   #update 
-  put 'blogs/:id', to: 'blogs#udpate', as: 'blog'
+  put 'blogs/:id', to: 'blogs#udpate'
   #destroy 
   delete 'blogs/:id', to: 'blgos#destroy', as: 'delete_blog'
 
