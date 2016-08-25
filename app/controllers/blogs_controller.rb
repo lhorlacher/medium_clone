@@ -1,9 +1,10 @@
 class BlogsController < ApplicationController
   def index
+    @blogs = @user.blogs
   end
 
   def show
-    @blog = @current_user.blog
+    @blog = @user.blog
   end
 
   def new
