@@ -1,2 +1,16 @@
-<h1>Blogs#index</h1>
-<p>Find me in app/views/blogs/index.html.erb</p>
+<h1>My Blog Posts</h1>
+
+<% if @blogs %>
+  <ul>
+    <% @blogs.each do |blogs| %>
+      <li>
+        <%= link_to "#{@blog.title}", blogs_path%>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <h3>No Posts Here</h3>
+<% end %>
+
+
+<%= link_to 'Create a Blog Post', new_blog_path%>
