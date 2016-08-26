@@ -22,13 +22,13 @@ Rails.application.routes.draw do
   get 'blogs/:id', to: 'blogs#show', as: 'show_blog'
   #new 
   get 'bloggers/:blogger_id/blogs/new', to: 'blogs#new', as: 'new_blog'
-  #create 
+  #create
   post 'bloggers/:blogger_id/blogs/new', to: 'blogs#create'
-  #edit 
+  #edit
   get 'blogs/:id', to: 'blogs#edit', as: 'edit_blog'
-  #update 
+  #update
   put 'blogs/:id', to: 'blogs#udpate'
-  #destroy 
+  #destroy
   delete 'blogs/:id', to: 'blgos#destroy', as: 'delete_blog'
 
   # comments

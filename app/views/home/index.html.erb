@@ -1,7 +1,7 @@
 <% @blogs.each do |blog| %>
 	<div class="card-panel hoverable col 12">
 	<% 	binding.pry %>
-		<h5> <%= link_to blog.author, blogger_posts_path(blog.blogger_id) %> </h5>
+		<h5> <%= link_to blog.author, blogger_posts_path(blog.user_id) %> </h5>
 		<br>
 		<h3> <%= blog.title %> </h3>
 		<p class='truncate'> <%= blog.body %> </p>

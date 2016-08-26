@@ -3,7 +3,8 @@
   <%= f.text_field :title %>
   <br/>
   <%= f.hidden_field :author, value: "#{current_user.first_name} #{current_user.last_name}" %>
-  <%= f.hidden_field :user_id %>
+  <%= f.hidden_field :user_id, value: :blogger_id %> 
+<!--   PARAMS COMING IN AS BLOGGER. NEED TO BE RECORDED AS USER? -->
   </br>
   <%= f.label :body %>
   <%= f.text_area :body %>

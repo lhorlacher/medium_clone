@@ -4,14 +4,12 @@
   <ul>
     <% @blogs.each do |blog| %>
       <li>
-        <%= link_to "#{@blog.title}", blogs_path%>
+        <%= link_to "#{blog.title}", blogger_posts_path%>
       </li>
     <% end %>
   </ul>
 <% else %>
   <h3>No Posts Here</h3>
 <% end %>
-
-<h1> Bloggers</h1>
 
 <%= link_to 'Create a Blog Post', new_blog_path(:blogger_id)%>
