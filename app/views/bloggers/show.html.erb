@@ -1,13 +1,22 @@
-<h1><%= "#{@blogger.first_name} #{@blogger.last_name}" %>'s Blog Posts</h1>
-<%= image_tag(@blogger.image.url(:thumb)) %>
+<h1> <%= image_tag(@blogger.image.url(:thumb)) %> <%= "#{@blogger.first_name} #{@blogger.last_name}" %>'s Blog Posts</h1>
 
+<%= will_paginate @blogs %>
 <% if @blogs %>
   <ul>
     <% @blogs.each do |blog| %>
       <div class="card-panel hoverable col 12">
-        <li>
-          <%= link_to "#{blog.title}", show_blog_path(blog) %>
-        </li>
+        <div>
+          <blockquote >
+            <li>
+              <h4><%= link_to "#{blog.title}", show_blog_path(blog) %></h4>
+            </li>
+          </blockquote>
+        </div>
+        <div class="truncate">
+           <p>
+             <%= blog.body %>
+           </p>
+        </div>
       </div>
     <% end %>
   </ul>
@@ -16,3 +25,4 @@
 <% end %>
 
 <%= link_to 'Create a Blog Post', new_blog_path(:blogger_id) %>
+<br/>
