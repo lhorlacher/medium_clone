@@ -14,7 +14,7 @@
 
     <nav>
     <div class="nav-wrapper">
-        <%= link_to 'Clone', home_path %>
+        <%= link_to 'Home', home_path %>
 	      <ul id="nav-mobile" class="right hide-on-med-and-down">
 	      <% if signed_in? %>
 	        <li> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %> </li>

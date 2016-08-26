@@ -4,9 +4,11 @@
 <% if @blogs %>
   <ul>
     <% @blogs.each do |blog| %>
-      <li>
-        <%= link_to "#{blog.title}", show_blog_path(blog) %>
-      </li>
+      <div class="card-panel hoverable col 12">
+        <li>
+          <%= link_to "#{blog.title}", show_blog_path(blog) %>
+        </li>
+      </div>
     <% end %>
   </ul>
 <% else %>
