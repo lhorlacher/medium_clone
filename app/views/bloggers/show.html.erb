@@ -1,4 +1,4 @@
-<h1> <%= image_tag(@blogger.image.url(:thumb)) %> <%= "#{@blogger.first_name} #{@blogger.last_name}" %>'s Blog Posts</h1>
+<h1><%= image_tag(@blogger.image.url(:thumb), :class => "round-corner") %> <%= "#{@blogger.first_name} #{@blogger.last_name}" %>'s Blog Posts</h1>
 
 <%= will_paginate @blogs %>
 <% if @blogs %>

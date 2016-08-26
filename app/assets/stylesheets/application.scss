@@ -14,3 +14,8 @@ $primary-color: color("light-green", "darken-1") !default;
 input {
   text-transform: capitalize;
 }
+
+.round-corner {
+  border-radius: 50%;
+}
+
