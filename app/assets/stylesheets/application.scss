@@ -4,3 +4,7 @@
 @import "materialize/components/color";
 $primary-color: color("light-green", "darken-1") !default;
 @import 'materialize';
+
+.pagination a li.active {
+  color: #fff;
+}
