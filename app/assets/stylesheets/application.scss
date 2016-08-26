@@ -10,3 +10,7 @@ $primary-color: color("light-green", "darken-1") !default;
 .pagination a li.active {
 	color: blue;
 }
+
+input {
+  text-transform: capitalize;
+}
