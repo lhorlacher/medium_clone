@@ -1,7 +1,6 @@
 /*
 *=require commontator/application
 */
-
-.login-center {
-  text-align: center;
-}
+@import "materialize/components/color";
+$primary-color: color("light-green", "darken-1") !default;
+@import 'materialize';

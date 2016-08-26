@@ -1,9 +1,11 @@
 <% @blogs.each do |blog| %>
 	<div class="card-panel hoverable col 12">
-	<% 	binding.pry %>
-		<h5> <%= link_to blog.author, blogger_posts_path(blog.user_id) %> </h5>
+		<% if User.find(blog.user_id).image %>
+			<%= link_to image_tag(User.find(blog.user_id).image.url(:thumb)), blogger_posts_path(blog.user_id) %>
+		<% end %>
+		<%= link_to blog.author, blogger_posts_path(blog.user_id) %>
 		<br>
-		<h3> <%= blog.title %> </h3>
+		<h3> <%= link_to blog.title, show_blog_path(blog) %> </h3>
 		<p class='truncate'> <%= blog.body %> </p>
 	</div>
 <% end %>

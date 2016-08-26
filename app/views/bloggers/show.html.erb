@@ -1,10 +1,11 @@
 <h1><%= "#{@blogger.first_name} #{@blogger.last_name}" %>'s Blog Posts</h1>
+<%= image_tag(@blogger.image.url(:thumb)) %>
 
 <% if @blogs %>
   <ul>
     <% @blogs.each do |blog| %>
       <li>
-        <%= link_to "#{blog.title}", blogger_posts_path%>
+        <%= link_to "#{blog.title}", show_blog_path(blog) %>
       </li>
     <% end %>
   </ul>
@@ -12,4 +13,4 @@
   <h3>No Posts Here</h3>
 <% end %>
 
-<%= link_to 'Create a Blog Post', new_blog_path(:blogger_id)%>
+<%= link_to 'Create a Blog Post', new_blog_path(:blogger_id) %>

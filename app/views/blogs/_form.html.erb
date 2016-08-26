@@ -1,13 +1,16 @@
 <%= form_for [current_user, @blog], url: new_blog_path do |f| %>
+  <div class='input-field'>
   <%= f.label :title %>
   <%= f.text_field :title %>
-  <br/>
+  </div>
+  <div class='input-field'>
   <%= f.hidden_field :author, value: "#{current_user.first_name} #{current_user.last_name}" %>
   <%= f.hidden_field :user_id, value: :blogger_id %> 
-<!--   PARAMS COMING IN AS BLOGGER. NEED TO BE RECORDED AS USER? -->
-  </br>
+  </div>
+  <div class='input-field'>
   <%= f.label :body %>
-  <%= f.text_area :body %>
-  </br>
-  <%= f.submit "Create New Blog Post"%>
+  <%= f.text_area :body, class: 'materialize-textarea' %>
+  </div>
+
+  <%= f.submit "Create New Blog Post", class: 'btn' %>
 <% end %>

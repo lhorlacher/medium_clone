@@ -35,6 +35,10 @@ gem 'devise', '~> 4.2.0'
 
 gem 'commontator', '~> 4.11.1'
 
+gem 'materialize-sass'
+
+gem "paperclip", "~> 4.2"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
