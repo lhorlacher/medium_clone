@@ -4,6 +4,16 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
+    <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autofocus: true, required: true, value: f.object.first_name.capitalize %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name, required: true, value: f.object.last_name.capitalize %>
+  </div>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -32,19 +42,20 @@
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
-    <div class="field">
-    <%= f.label :image %>
-    <%= f.file_field :image, class: 'btn' %>
-    </div>
-
+  <div class='field'>
+    <%= f.label :image, 'Add Profile Image', class: 'active', class: 'btn' %>
+    <span style='display:none'> <%= f.file_field :image, class: 'btn' %> </span>
+  </div>
+  <br>
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Update", class: 'btn' %>
   </div>
 <% end %>
+<br> <br><br><hr><hr> <br><br>
 
 <h3>Cancel my account</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn' %></p>
 
 <%= link_to "Back", :back %>
 </div>

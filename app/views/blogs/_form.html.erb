@@ -1,16 +1,29 @@
-<%= form_for [current_user, @blog], url: new_blog_path do |f| %>
-  <div class='input-field'>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  </div>
-  <div class='input-field'>
-  <%= f.hidden_field :author, value: "#{current_user.first_name} #{current_user.last_name}" %>
-  <%= f.hidden_field :user_id, value: :blogger_id %> 
-  </div>
-  <div class='input-field'>
-  <%= f.label :body %>
-  <%= f.text_area :body, class: 'materialize-textarea' %>
-  </div>
+<div class='card-panel hoverable'>
+  <%= form_for [current_user, @blog], url: new_blog_path do |f| %>
+    <div class='row'>
 
-  <%= f.submit "Create New Blog Post", class: 'btn' %>
-<% end %>
+      <div class='input-field col s12 m10'>
+        <%= f.label :title %>
+        <%= f.text_field :title, class: 'title_input' %>
+      </div>
+
+        <div class='hide-on-small-only col m2' style='position:relative;''>
+          <%= current_user.image ? image_tag(current_user.image.url(:thumb)) : nil %>
+          <div style='position:absolute; bottom: -12;'>
+          <%= "#{current_user.first_name} #{current_user.last_name}" %>
+          </div>
+        </div>
+    </div>
+
+    <div class='input-field'>
+    <%= f.hidden_field :author, value: "#{current_user.first_name} #{current_user.last_name}" %>
+    <%= f.hidden_field :user_id, value: :blogger_id %> 
+    </div>
+    <div class='input-field'>
+    <%= f.label :body %>
+    <%= f.text_area :body, class: 'materialize-textarea' %>
+    </div>
+
+    <%= f.submit "Create New Blog Post", class: 'btn' %>
+  <% end %>
+</div>

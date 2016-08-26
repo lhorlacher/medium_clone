@@ -5,6 +5,8 @@
 $primary-color: color("light-green", "darken-1") !default;
 @import 'materialize';
 
+@import 'blogs';
+
 .pagination a li.active {
-  color: #fff;
+	color: blue;
 }

@@ -6,12 +6,12 @@
 
   <div class="field">
     <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autofocus: true, required: true %>
+    <%= f.text_field :first_name, autofocus: true, required: true, value: f.object.first_name.capitalize %>
   </div>
 
   <div class="field">
     <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, required: true %>
+    <%= f.text_field :last_name, required: true, value: f.object.last_name.capitalize %>
   </div>
 
   <div class="field">
@@ -32,15 +32,17 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-  <div class="field">
-  <%= f.label :image %>
-  <%= f.file_field :image, class: 'btn' %>
+  <div class='field'>
+    <%= f.label :image, 'Add Profile Image', class: 'active', class: 'btn' %>
+    <span style='display:none'> <%= f.file_field :image, class: 'btn' %> </span>
   </div>
+  <br>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class: 'btn' %>
   </div>
 <% end %>
-<br><br><br><br>
+
+
 <%= render "devise/shared/links" %>
 </div>

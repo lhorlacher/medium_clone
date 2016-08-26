@@ -24,10 +24,10 @@ Rails.application.routes.draw do
   get 'bloggers/:blogger_id/blogs/new', to: 'blogs#new', as: 'new_blog'
   #create
   post 'bloggers/:blogger_id/blogs/new', to: 'blogs#create'
-  #edit
-  get 'blogs/:id', to: 'blogs#edit', as: 'edit_blog'
   #update
   put 'blogs/:id', to: 'blogs#udpate'
+  #edit
+  get 'blogs/:id', to: 'blogs#edit', as: 'edit_blog'
   #destroy
   delete 'blogs/:id', to: 'blgos#destroy', as: 'delete_blog'
 
