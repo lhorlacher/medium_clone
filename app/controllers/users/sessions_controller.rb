@@ -1,5 +1,4 @@
 class Users::SessionsController < Devise::SessionsController
-  acts_as_commontator
   
 # before_action :configure_sign_in_params, only: [:create]
 
